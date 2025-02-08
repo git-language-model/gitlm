@@ -1,6 +1,5 @@
 import { Apple, Bell, House, Rocket } from "lucide-react";
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
-import { Particles } from "../ui/particles";
 
 const features = [
     {
@@ -84,19 +83,15 @@ const features = [
 
 export function Features() {
     return (
-        <div className="md:max-w-3xl mx-auto pt-10 pb-10 z-10 p-2">
-            <BentoGrid>
-                {features.map((feature, idx) => (
-                    <BentoCard key={idx} {...feature} />
-                ))}
-            </BentoGrid>
-            <Particles
-                className="absolute inset-0 z-0"
-                quantity={100}
-                ease={80}
-                color='#ffffff'
-                refresh
-            />
+        <div className="w-full">
+            <div className="md:max-w-3xl mx-auto pt-10 pb-10 z-10 p-2">
+                <BentoGrid>
+                    {features.map((feature, idx) => (
+                        <BentoCard key={idx} {...feature} />
+                    ))}
+                </BentoGrid>
+            </div>
         </div>
+
     );
 }
