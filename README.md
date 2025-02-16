@@ -30,6 +30,8 @@ When you click on a repository:
 - **AI Stack**: LLM, GitIngest, Modus, Hypermode, Dgraph, GraphQL 🧠
 
 ## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/93e1bd59-a70c-4d8b-ae82-1bc206b855d2)
+![image](https://github.com/user-attachments/assets/ab34439f-972a-4500-8478-772a168a1e8b)
 
 
 ## 📌 Future Enhancements
@@ -70,10 +72,10 @@ cd gitlm
 
 ## 📎Refernce Links
 
-https://docs.hypermode.com/work-locally
-https://docs.hypermode.com/deploy
-https://docs.hypermode.com/create-project
-https://docs.hypermode.com/hosted-models
+https://docs.hypermode.com/work-locally <br/>
+https://docs.hypermode.com/deploy <br/>
+https://docs.hypermode.com/create-project <br/>
+https://docs.hypermode.com/hosted-models<br/>
 https://docs.hypermode.com/hyp-cli
 
 ## 📢 Contribute
