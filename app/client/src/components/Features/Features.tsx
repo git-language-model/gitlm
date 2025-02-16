@@ -1,81 +1,148 @@
-import { Apple, Bell, House, Rocket } from "lucide-react";
+import { Workflow, TableOfContents, MessageSquareMore, Github } from "lucide-react";
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
+import { File, Folder, Tree } from "@/components/magicui/file-tree";
+
+
+const ELEMENTS = [
+    {
+        id: "1",
+        isSelectable: true,
+        name: "src",
+        children: [
+            {
+                id: "2",
+                isSelectable: true,
+                name: "app",
+                children: [
+                    {
+                        id: "3",
+                        isSelectable: true,
+                        name: "layout.tsx",
+                    },
+                    {
+                        id: "4",
+                        isSelectable: true,
+                        name: "page.tsx",
+                    },
+                ],
+            },
+            {
+                id: "5",
+                isSelectable: true,
+                name: "components",
+                children: [
+                    {
+                        id: "6",
+                        isSelectable: true,
+                        name: "header.tsx",
+                    },
+                    {
+                        id: "7",
+                        isSelectable: true,
+                        name: "footer.tsx",
+                    },
+                ],
+            },
+            {
+                id: "8",
+                isSelectable: true,
+                name: "lib",
+                children: [
+                    {
+                        id: "9",
+                        isSelectable: true,
+                        name: "utils.ts",
+                    },
+                ],
+            },
+        ],
+    },
+];
 
 const features = [
     {
-        Icon: Bell,
-        name: "Save your files",
-        description: "We automatically save your files as you type.",
-        href: "#",
-        cta: "Learn more",
+        Icon: TableOfContents,
+        name: "Takes Files and structure",
+        description: "",
         className: "col-span-3 lg:col-span-1",
         background: (
-            <></>
-            // <Marquee
-            //   pauseOnHover
-            //   className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
-            // >
-            //   {files.map((f, idx) => (
-            //     <figure
-            //       key={idx}
-            //       className={cn(
-            //         "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
-            //         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-            //         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-            //         "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
-            //       )}
-            //     >
-            //       <div className="flex flex-row items-center gap-2">
-            //         <div className="flex flex-col">
-            //           <figcaption className="text-sm font-medium dark:text-white ">
-            //             {f.name}
-            //           </figcaption>
-            //         </div>
-            //       </div>
-            //       <blockquote className="mt-2 text-xs">{f.body}</blockquote>
-            //     </figure>
-            //   ))}
-            // </Marquee>
+            <div className="absolute">
+                <Tree
+                    className="overflow-hidden rounded-md p-2"
+                    initialSelectedId="7"
+                    initialExpandedItems={[
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                    ]}
+                    elements={ELEMENTS}
+                >
+                    <Folder element="src" value="1">
+                        <Folder value="2" element="app">
+                            <File value="3">
+                                <p>layout.tsx</p>
+                            </File>
+                            <File value="4">
+                                <p>page.tsx</p>
+                            </File>
+                        </Folder>
+                        <Folder value="5" element="components">
+                        </Folder>
+                        <Folder value="10" element="lib">
+                            <File value="11">
+                                <p>utils.ts</p>
+                            </File>
+                        </Folder>
+                    </Folder>
+                </Tree>
+            </div>
         ),
     },
     {
-        Icon: Rocket,
-        name: "Notifications",
-        description: "Get notified when something happens.",
-        href: "#",
-        cta: "Learn more",
+        Icon: Github,
+        name: "Github Integration",
+        description: "",
         className: "col-span-3 lg:col-span-2",
         background: (
-            <></>
-            // <AnimatedListDemo className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+            <div className="absolute inset-0 flex items-center justify-center">
+                <img src="https://i.ibb.co/KPvgDy9/Screenshot-2025-02-14-085437.png" alt="Github Data" className="w-full h-full object-cover" />
+            </div>
         ),
     },
     {
-        Icon: Apple,
-        name: "Integrations",
-        description: "Supports 100+ integrations and counting.",
-        href: "#",
-        cta: "Learn more",
+        Icon: Workflow,
+        name: "Hypermode + dgraph",
+        description: "",
         className: "col-span-3 lg:col-span-2",
         background: (
-            <></>
-            // <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+            <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                    src="https://cdn.dribbble.com/userupload/12689015/file/original-418e3580e99461ff76919dc82273dd0b.png?resize=400x0"
+                    alt="Hypermode"
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
         ),
     },
     {
-        Icon: House,
-        name: "Calendar",
-        description: "Use the calendar to filter your files by date.",
+        Icon: MessageSquareMore,
+        name: "Chat with Repo",
+        description: "",
         className: "col-span-3 lg:col-span-1",
-        href: "#",
-        cta: "Learn more",
         background: (
-            // <Calendar
-            //   mode="single"
-            //   selected={new Date(2022, 4, 11, 0, 0, 0)}
-            //   className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-            // />
-            <></>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <img src="https://i.ibb.co/F4gsBrWR/Screenshot-2025-02-16-184412.png" alt="chat" className="w-full h-full object-cover" />
+
+            </div>
         ),
     },
 ];
@@ -84,7 +151,7 @@ const features = [
 export function Features() {
     return (
         <div className="w-full">
-            <div className="md:max-w-3xl mx-auto pt-10 pb-10 z-10 p-2">
+            <div className="md:max-w-3xl mx-auto pt-10 pb-10 z-10 p-6">
                 <BentoGrid>
                     {features.map((feature, idx) => (
                         <BentoCard key={idx} {...feature} />

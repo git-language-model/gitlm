@@ -27,7 +27,7 @@ export function Footer() {
                             href="#"
                             className="text-gray-600 font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
                         >
-                            Contact Us
+                            X
                         </a>
                     </li>
                     <li className="-mt-6" >

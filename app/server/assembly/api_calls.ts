@@ -61,7 +61,7 @@ export function getStarredRepositories(name: string): Repo[] {
 
 export function getContext(url:string): string {
 
-    const response = http.fetch(`http://localhost:3000/analyze?url=${url}`)
+    const response = http.fetch(`https://gitlm-flask-server.onrender.com/analyze?url=${url}`)
     if (!response.ok) {
       console.log(response.statusText);
     }

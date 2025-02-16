@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from gitingest import ingest
+import gunicorn
 import html
 
 app = Flask(__name__)
@@ -34,5 +35,5 @@ def get_summary():
 
     return jsonify({"summary": cleaned_summary, "tree": cleaned_tree, "content": cleaned_content})
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=3000)
